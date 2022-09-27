@@ -1,0 +1,6 @@
+name: Devjobs homepage
+description: Allow user to search for information on companies
+package: CostumModules
+
+type: module
+core_version_requirement: ^8 || ^9

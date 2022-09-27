@@ -1,0 +1,8 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      dist/output.css: {}
+global-js:
+  js:
+    js/index.js: {}

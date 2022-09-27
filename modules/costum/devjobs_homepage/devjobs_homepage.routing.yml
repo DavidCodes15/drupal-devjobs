@@ -1,0 +1,7 @@
+devjobs_homepage.listing:
+  path: '/home-page'
+  defaults:
+    _controller: '\Drupal\devjobs_homepage\Controller\HomePage::view'
+    _title: 'Devjobs Home Page'
+  requirements:
+    _permission: 'access content'  

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/output.css">
+</head>
+<body>
+<form method="POST" action="" class="z-10 dark-off">
+<div class="pt-24 pl-32">
+  <div class="flex flex-nowrap px-4 ml-10 items-center rounded-2xl w-[327px] md:w-[689px] lg:w-[730px] xl:w-[1110px] bg-white dark:bg-[#19202D] dark:text-white">
+  <img src="{{base_path ~ directory }}/images/search.png" class="w-[23.94px] h-[23.94px]">
+  <input type="search" id="search" name="search"  placeholder="Filter by title,companies..." class="ml-4 w-64 dark:bg-[#19202D]">
+  <div class="h-[80px] mx-auto flex items-center border-l-2 border-slate-200 border-solid dark:border-l-2 dark:border-[#6E8098] dark:border-solid pl-4">
+  <img src="{{base_path ~ directory }}/images/location.png" class="w-[16.72px] h-[23.89px]">
+  <input type="search" id="location" name="location"  placeholder="Filter by location..." class="pl-10 dark:bg-[#19202D]">
+   </div>
+   <div class="h-[80px] mx-auto px-4 flex items-center border-l-2 border-slate-200 border-solid dark:border-l-2 dark:border-[#6E8098] dark:border-solid">
+  <input type="checkbox" id="check" name="check" value="Full" class="pl-10">
+  <label class="font-bold pl-4" for="check">Full time Only</label>
+  </div>
+  <button type="submit" name="submit" class="ml-10 w-[123px] h-[48px] text-white text-center bg-[#5964E0] rounded hover:bg-[#939BF4]" name="submit">
+  {# <input type="submit" value="Submit" name="submit"  /> #} Search
+  </button>
+  </div>
+  </div>
+</form>
+
+ <div class="grid md:grid-cols-2 xl:grid-cols-3">
+  {% for job in jobs %}
+  
+    <ul class="bg-white dark-off dark:bg-[#19202D] mt-[50px] pl-8 pr-6 w-[327px] min-h-[228px] rounded-md box-border mx-auto md: w-[339] xl: w-[350]">
+       <li class="relative bottom-6"><img src={{ job.logo }} class="rounded-2xl"/></li>
+       <div class="text-slate-400 flex mb-4 text-sm">
+        <li>{{ job.date }}</li> 
+       </div>
+        <li class="font-bold my-4 text-xl break-words"><a href="/node/{{ job.nid }}">{{job.title}}</a></li>
+       <li class="text-slate-400 mt-4 mb-11 text-sm">{{ job.company }}</li>
+       <li class="text-[#5964E0] font-bold text-xs pb-9">{{ job.country }} </li>
+    </ul> 
+  {% endfor %}    
+  </div>
+ <div class="flex justify-center items-center">
+  <button class="mt-24 w-[141px] h-[48px] text-white text-center bg-[#5964E0] rounded hover:bg-[#939BF4]">
+  Load More
+  </button>
+  </div>
+</body>
+</html>
+

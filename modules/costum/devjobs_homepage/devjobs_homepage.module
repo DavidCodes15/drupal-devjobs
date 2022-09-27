@@ -1,0 +1,19 @@
+<?php 
+
+/**
+ * Implements hook_theme().
+ */
+
+function devjobs_homepage_theme($existing, $type, $theme, $path){
+
+  return[
+    'home-page' => [
+      'variables' => [
+        'jobs' => [],
+      ],
+    ],
+
+  ];
+}
+
+?>
